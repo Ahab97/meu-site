@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer conversar?</title>
+    <style>
+        /* Estilo do fundo e da mensagem */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffc0cb; /* Cor de fundo rosa */
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 300px;
+        }
+
+        /* Estilo dos botões */
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #botao-sim {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+
+        #botao-nao {
+            background-color: #f44336; /* Vermelho */
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quer conversar e tentar se resolver?</h1>
+        <button id="botao-sim">Sim</button>
+        <button id="botao-nao">Não</button>
+    </div>
+
+    <script>
+        // Função para mover o botão "Não" quando o cursor se aproxima
+        const botaoNao = document.getElementById('botao-nao');
+        botaoNao.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - botaoNao.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - botaoNao.clientHeight));
+            botaoNao.style.left = `${x}px`;
+            botaoNao.style.top = `${y}px`;
+        });
+
+        // Redireciona para o vídeo quando clica em "Sim"
+        const botaoSim = document.getElementById('botao-sim');
+        botaoSim.addEventListener('click', () => {
+            window.location.href = 'https://www.youtube.com/watch?v=46w_wj1hXac'; // Substitua pelo link do vídeo desejado
+        });
+    </script>
+
+</body>
+</html>
